@@ -1,1 +1,0 @@
-CREATE TABLE Person(ID serial primary key, Name varchar(100), Email varchar(100));
