@@ -55,4 +55,22 @@ export class StoreUser {
       throw new Error(`Cannot show user. ${error}`);
     }
   }
+
+  async authenticate(u: person): Promise<person | null> {
+    try {
+      //@ts-ignore
+      const conn = client.connect();
+      const sql = `SELECT password_ from user where id=($1)`;
+      const result = await (await conn).query(sql, [u.id]);
+      if (result.rows.length) {
+        const user = result.rows[0];
+        if (bcrypt.compareSync(u.password_ + pepper, user.password_)) {
+          return user;
+        }
+      }
+      return null;
+    } catch (error) {
+      throw new Error(`Cannot authenticate user. ${error}`);
+    }
+  }
 }

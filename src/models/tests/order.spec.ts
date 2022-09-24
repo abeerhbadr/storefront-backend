@@ -9,7 +9,7 @@ describe('User Model', () => {
 
   it('show method should return the correct user', async () => {
     const result = await stOrder.showCurrentOrder(1);
-    console.log(result)
+    console.log(result);
     //expect(result.pname).toEqual('toothbrush');
   });
 });
