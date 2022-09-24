@@ -26,7 +26,9 @@ describe('User Model', () => {
       password: 'berobero',
     });
 
-    expect(bcrypt.compareSync('berobero'+pepper, result.password)).toEqual(true);
+    expect(bcrypt.compareSync('berobero' + pepper, result.password)).toEqual(
+      true
+    );
     expect(result.firstname).toEqual('Abeer');
     expect(result.lastname).toEqual('Hussein');
   });
@@ -34,12 +36,14 @@ describe('User Model', () => {
   it('index method should return a list of users', async () => {
     const result = await stUser.index();
     //console.log(typeof(result)) //gave me object
-    expect(Array.isArray(result)).toBe(true)
+    expect(Array.isArray(result)).toBe(true);
   });
 
   it('show method should return the correct user', async () => {
     const result = await stUser.show(1);
-    expect(bcrypt.compareSync('berobero'+pepper, result.password)).toEqual(true);
+    expect(bcrypt.compareSync('berobero' + pepper, result.password)).toEqual(
+      true
+    );
     expect(result.firstname).toEqual('Abeer');
     expect(result.lastname).toEqual('Hussein');
   });

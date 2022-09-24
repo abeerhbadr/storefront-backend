@@ -34,7 +34,7 @@ export class StoreUser {
         parseInt(saltRounds as string)
       );
       const sql = `INSERT INTO person (firstname, lastname, password) VALUES ($1, $2, $3) RETURNING *`;
-      const result = await conn.query(sql,[u.firstname, u.lastname, hash]);
+      const result = await conn.query(sql, [u.firstname, u.lastname, hash]);
       //console.log(result.rows[0])
       conn.release;
       return result.rows[0];
