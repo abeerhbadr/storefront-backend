@@ -2,7 +2,7 @@ import client from './../database/database';
 
 export type product = {
   id: number;
-  name: string;
+  pname: string;
   price: number;
   category: string;
 };
@@ -26,8 +26,8 @@ export class StoreProduct {
       //@ts-ignore
       const conn = await client.connect();
       //console.log('conn:',conn) //changed env ENV to test to connect to test database, when run npm run jasmine-ts
-      const sql = `INSERT INTO product (name, price, category) VALUES ($1, $2, $3) RETURNING *`;
-      const result = await conn.query(sql, [p.name, p.price, p.category]);
+      const sql = `INSERT INTO product (pName, price, category) VALUES ($1, $2, $3) RETURNING *`;
+      const result = await conn.query(sql, [p.pname, p.price, p.category]);
       //console.log(result.rows[0])
       conn.release;
       return result.rows[0];

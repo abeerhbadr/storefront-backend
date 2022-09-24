@@ -1,1 +1,6 @@
-CREATE TABLE Product(ID SERIAL PRIMARY KEY, Name varchar(100), Price decimal(10,2), Category varchar(100));
+CREATE TABLE Product(
+    id SERIAL PRIMARY KEY,
+    pName varchar(100) not null, 
+    price decimal(10,2) not null, 
+    category varchar(100)
+);

@@ -7,7 +7,7 @@ export type person = {
   id: number;
   firstname: string;
   lastname: string;
-  password: string;
+  password_: string;
 };
 
 export class StoreUser {
@@ -30,10 +30,10 @@ export class StoreUser {
       const conn = await client.connect();
       //console.log('conn:',conn) //changed env ENV to test to connect to test database, when run npm run jasmine-ts
       const hash = bcrypt.hashSync(
-        u.password + pepper,
+        u.password_ + pepper,
         parseInt(saltRounds as string)
       );
-      const sql = `INSERT INTO person (firstname, lastname, password) VALUES ($1, $2, $3) RETURNING *`;
+      const sql = `INSERT INTO person (firstname, lastname, password_) VALUES ($1, $2, $3) RETURNING *`;
       const result = await conn.query(sql, [u.firstname, u.lastname, hash]);
       //console.log(result.rows[0])
       conn.release;

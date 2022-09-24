@@ -18,15 +18,15 @@ describe('User Model', () => {
   it('create method should add a product', async () => {
     const result = await stProduct.create({
       id: 1,
-      name: 'toothbrush',
+      pname: 'toothbrush',
       price: 20,
-      category: "tooth",
+      category: 'tooth',
     });
 
-    expect(result.name).toEqual('toothbrush');
-    expect(result.price).toBeCloseTo(20,2);
+    expect(result.pname).toEqual('toothbrush');
+    expect(result.price).toBeCloseTo(20, 2);
     expect(result.category).toEqual('tooth');
-});
+  });
 
   it('index method should return a list of users', async () => {
     const result = await stProduct.index();
@@ -36,8 +36,8 @@ describe('User Model', () => {
 
   it('show method should return the correct user', async () => {
     const result = await stProduct.show(1);
-    expect(result.name).toEqual('toothbrush');
-    expect(result.price).toBeCloseTo(20,2);
+    expect(result.pname).toEqual('toothbrush');
+    expect(result.price).toBeCloseTo(20, 2);
     expect(result.category).toEqual('tooth');
   });
 });

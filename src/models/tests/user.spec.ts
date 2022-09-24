@@ -23,10 +23,10 @@ describe('User Model', () => {
       id: 1,
       firstname: 'Abeer',
       lastname: 'Hussein',
-      password: 'berobero',
+      password_: 'berobero',
     });
 
-    expect(bcrypt.compareSync('berobero' + pepper, result.password)).toEqual(
+    expect(bcrypt.compareSync('berobero' + pepper, result.password_)).toEqual(
       true
     );
     expect(result.firstname).toEqual('Abeer');
@@ -41,7 +41,7 @@ describe('User Model', () => {
 
   it('show method should return the correct user', async () => {
     const result = await stUser.show(1);
-    expect(bcrypt.compareSync('berobero' + pepper, result.password)).toEqual(
+    expect(bcrypt.compareSync('berobero' + pepper, result.password_)).toEqual(
       true
     );
     expect(result.firstname).toEqual('Abeer');

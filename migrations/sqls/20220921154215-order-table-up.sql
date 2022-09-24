@@ -1,1 +1,5 @@
-CREATE TABLE StoreOrder(ID SERIAL PRIMARY KEY, ProductsIDs integer[], ProductsQty integer[], PersonID integer, OrderStatus varchar(50));
+CREATE TABLE StoreOrder(
+    id SERIAL PRIMARY KEY, 
+    userId integer not null, 
+    orderStatus varchar(50) not null
+);
