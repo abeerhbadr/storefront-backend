@@ -3,14 +3,14 @@
       "driver": "pg",
       "host": "127.0.0.1",
       "database": "storefront",
-      "user": "postgres",
-      "password": "1010abeer"
+      "user": "udacityuser",
+      "password": "password123"
     },
     "test": {
       "driver": "pg",
       "host": "127.0.0.1",
       "database": "storefront_test",
-      "user": "postgres",
-      "password": "1010abeer"
+      "user": "udacityuser",
+      "password": "password123"
     }
   }

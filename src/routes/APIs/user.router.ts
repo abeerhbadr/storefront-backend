@@ -39,10 +39,10 @@ userRouter.get(
 
 userRouter.post(
   '/users',
-  verifyAuthToken,
   async (req: Request, res: Response) => {
     try {
       //res.send('this is the CREATE route');
+      console.log(req.body.firstname)
       const u: person = {
         id: 1,
         firstname: req.body.firstname,
@@ -51,10 +51,12 @@ userRouter.post(
       };
   
       const newUser = await stUser.create(u);
+      //console.log(newUser)
       var token = jwt.sign(
         { user: newUser },
         process.env.Token_SECRET as jwt.Secret
       );
+      //console.log(token)
       res.status(200).json(token);
     } catch (err) {
       res.status(400);

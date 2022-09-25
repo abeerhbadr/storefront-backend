@@ -33,6 +33,7 @@ export class StoreUser {
         u.password_ + pepper,
         parseInt(saltRounds as string)
       );
+      //console.log(hash)
       const sql = `INSERT INTO person (firstname, lastname, password_) VALUES ($1, $2, $3) RETURNING *`;
       const result = await conn.query(sql, [u.firstname, u.lastname, hash]);
       //console.log(result.rows[0])
