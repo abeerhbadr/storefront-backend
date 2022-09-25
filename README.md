@@ -10,7 +10,8 @@ npm install
 ```
 CREATE DATABASE storefront;
 CREATE DATABASE storefront_test;
-CREATE USER udacityuser WITH PASSWORD 'password123';
+CREATE USER udacityuser WITH SUPERUSER PASSWORD 'password123';
+
 \c storefront
 GRANT ALL PRIVILIDGES ON DATABASE storefront TO udacityuser;
 \c storefront_test
