@@ -6,25 +6,39 @@ These are the notes from a meeting with the frontend developer that describe wha
 ## API Endpoints
 #### Products
 - Index 
-/products - GET
+```
+[GET] /store/products
+```
 - Show
-/products/:id - GET
+```
+[GET] /store/products/:id
+```
 - Create [token required]
-/products - POST
+```
+[POST] /store/products
+```
 - [OPTIONAL] Top 5 most popular products 
 - [OPTIONAL] Products by category (args: product category)
 
 #### Users
 - Index [token required]
-/products - GET
+```
+[GET] /store/users
+```
 - Show [token required]
-/products/:id - GET
+```
+[GET] /store/users/:id
+```
 - Create N[token required]
-/products - POST
+```
+[POST] /store/users
+```
 
 #### Orders
 - Current Order by user (args: user id)[token required]
-/orders/active - GET
+```
+[GET] /store/orders/active
+```
 - [OPTIONAL] Completed Orders by user (args: user id)[token required]
 
 ## Data Shapes
