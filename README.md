@@ -51,12 +51,6 @@ db-migrate up
 dg-migrate down
 ```
 
-### Add/remove tables to test database
-```
-db-migrate --env test up && db-migrate up
-db-migrate --env test down"
-```
-
 ### npm-run Scripts
 
 - `eslint` `npm run lint`
