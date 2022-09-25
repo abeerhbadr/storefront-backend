@@ -39,6 +39,11 @@ TOKEN_SECRET=bero123
   }
 ```
 
+### Port
+```
+3000
+```
+
 ### Create databases
 ```
 create database storefront 
