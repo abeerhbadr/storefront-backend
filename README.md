@@ -19,6 +19,26 @@ SALT_ROUNDS=10
 TOKEN_SECRET=bero123
 ```
 
+### Add database.json file and add your user name and password
+```
+{
+    "dev": {
+      "driver": "pg",
+      "host": "127.0.0.1",
+      "database": "storefront",
+      "user": "",
+      "password": ""
+    },
+    "test": {
+      "driver": "pg",
+      "host": "127.0.0.1",
+      "database": "storefront_test",
+      "user": "",
+      "password": ""
+    }
+  }
+```
+
 ### Create databases
 ```
 create database storefront 
