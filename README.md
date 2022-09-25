@@ -6,48 +6,33 @@
 npm install
 ```
 
-### Add .env file and add the following, add your user name and password
+### Create databases and user
+```
+CREATE DATABASE storefront;
+CREATE DATABASE storefront_test;
+CREATE USER udacityuser WITH PASSWORD 'password123';
+\c storefront
+GRANT ALL PRIVILIDGES ON DATABASE storefront TO udacityuser;
+\c storefront_test
+GRANT ALL PRIVILIDGES ON DATABASE storefront_test TO udacityuser;
+```
+
+### Add .env file and add the following
 ```
 POSTGRES_HOST=127.0.0.1
 POSTGRES_DB=storefront
 POSTGRES_TEST_DB=storefront_test
-POSTGRES_USER=
-POSTGRES_PASSWORD=
+POSTGRES_USER=udacityuser
+POSTGRES_PASSWORD=password123
 ENV=dev
 BCRYPT_PASSWORD=my-secret-password
 SALT_ROUNDS=10
 TOKEN_SECRET=bero123
 ```
 
-### Add database.json file and add your user name and password
-```
-{
-    "dev": {
-      "driver": "pg",
-      "host": "127.0.0.1",
-      "database": "storefront",
-      "user": "",
-      "password": ""
-    },
-    "test": {
-      "driver": "pg",
-      "host": "127.0.0.1",
-      "database": "storefront_test",
-      "user": "",
-      "password": ""
-    }
-  }
-```
-
 ### Port
 ```
 3000
-```
-
-### Create databases
-```
-create database storefront 
-create database storefront_test
 ```
 
 ### Add/remove tables to dev database
