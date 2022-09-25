@@ -3,7 +3,7 @@
 
 ### Install the dependincies
 ```
-npm i
+npm install
 ```
 
 ### Add .env file and add the following, add your user name and password
@@ -61,7 +61,7 @@ db-migrate --env test down"
 
 - `eslint` `npm run lint`
 - `prettier` `npm run prettier`
-- `test` `npm run testt`
+- `test` `npm run test`
 - `production` `npm run start`
 - `build` `npm run build`
 
