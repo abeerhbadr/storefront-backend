@@ -3,7 +3,7 @@
 
 ### Install the dependincies
 ```
-npm i
+npm install
 ```
 
 ### Add .env file and add the following, add your user name and password
@@ -13,10 +13,30 @@ POSTGRES_DB=storefront
 POSTGRES_TEST_DB=storefront_test
 POSTGRES_USER=
 POSTGRES_PASSWORD=
-ENV=test
+ENV=dev
 BCRYPT_PASSWORD=my-secret-password
 SALT_ROUNDS=10
 TOKEN_SECRET=bero123
+```
+
+### Add database.json file and add your user name and password
+```
+{
+    "dev": {
+      "driver": "pg",
+      "host": "127.0.0.1",
+      "database": "storefront",
+      "user": "",
+      "password": ""
+    },
+    "test": {
+      "driver": "pg",
+      "host": "127.0.0.1",
+      "database": "storefront_test",
+      "user": "",
+      "password": ""
+    }
+  }
 ```
 
 ### Create databases
@@ -31,17 +51,11 @@ db-migrate up
 dg-migrate down
 ```
 
-### Add/remove tables to test database
-```
-db-migrate --env test up && db-migrate up
-db-migrate --env test down"
-```
-
 ### npm-run Scripts
 
 - `eslint` `npm run lint`
 - `prettier` `npm run prettier`
-- `test` `npm run testt`
+- `test` `npm run test`
 - `production` `npm run start`
 - `build` `npm run build`
 
