@@ -61,3 +61,32 @@ These are the notes from a meeting with the frontend developer that describe wha
 - user_id
 - status of order (active or complete)
 
+## Database Schema
+#### Product table
+```
+id SERIAL PRIMARY KEY,
+pName varchar(100) not null, 
+price decimal(10,2) not null, 
+category varchar(100)
+```
+
+#### Person table
+```
+id serial primary key, 
+firstName varchar(100) not null,
+lastName varchar(100) not null, 
+password_ varchar(100) not null
+```
+#### Order table
+```
+id SERIAL PRIMARY KEY, 
+userId integer not null, 
+ orderStatus varchar(50) not null default 'active'
+```
+
+#### OrderProduct table
+```
+orderId integer not null references StoreOrder(id),
+productId integer not null references product(id),
+productQty integer not null
+```
