@@ -2,7 +2,7 @@ import { StoreProduct } from '../product';
 
 const stProduct = new StoreProduct();
 
-describe('User Model', () => {
+describe('Product Model', () => {
   it('should have an index method', () => {
     expect(stProduct.index).toBeDefined();
   });
@@ -28,13 +28,13 @@ describe('User Model', () => {
     expect(result.category).toEqual('tooth');
   });
 
-  it('index method should return a list of users', async () => {
+  it('index method should return a list of products', async () => {
     const result = await stProduct.index();
     //console.log(typeof(result)) //gave me object
     expect(Array.isArray(result)).toBe(true);
   });
 
-  it('show method should return the correct user', async () => {
+  it('show method should return the correct product', async () => {
     const result = await stProduct.show(1);
     expect(result.pname).toEqual('toothbrush');
     expect(result.price).toBeCloseTo(20, 2);

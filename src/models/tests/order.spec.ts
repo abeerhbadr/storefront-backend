@@ -2,7 +2,7 @@ import { StoreOrder } from '../order';
 
 const stOrder = new StoreOrder();
 
-describe('User Model', () => {
+describe('Order Model', () => {
   it('should have a show method', () => {
     expect(stOrder.showCurrentOrder).toBeDefined();
   });

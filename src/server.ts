@@ -13,9 +13,9 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
 });
 
-app.use('/users', userRouter);
-app.use('/products', productRouter);
-app.use('/orders', orderRouter);
+app.use('/', userRouter);
+app.use('/', productRouter);
+app.use('/', orderRouter);
 
 app.listen(3000, () => {
   console.log(`starting app on: ${address}`);

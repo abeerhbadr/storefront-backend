@@ -50,6 +50,7 @@ export class StoreUser {
       const sql = `SELECT * FROM person where id=($1)`;
       const result = await conn.query(sql, [id]);
       conn.release;
+      console.log(result.rows[0])
       return result.rows[0];
     } catch (error) {
       throw new Error(`Cannot show user. ${error}`);
