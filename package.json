@@ -6,8 +6,8 @@
   "scripts": {
     "start": "nodemon src/server.ts",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
-    "migrate": "db-migrate --env test up && db-migrate up",
-    "test-db-migrate-down": "db-migrate --env test down",
+    "migrate-test": "db-migrate --env test up && db-migrate up",
+    "demigrate-test": "db-migrate --env test down",
     "test": "set ENV=test&& db-migrate --env test up && db-migrate up && jasmine-ts && db-migrate --env test down -c 4",
     "testt": "cross-env ENV=test jasmine-ts",
     "jasmine": "jasmine",
