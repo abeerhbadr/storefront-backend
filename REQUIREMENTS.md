@@ -81,7 +81,7 @@ password_ varchar(100) not null
 ```
 id SERIAL PRIMARY KEY, 
 userId integer not null, 
- orderStatus varchar(50) not null default 'active'
+orderStatus varchar(50) not null default 'active'
 ```
 
 #### OrderProduct table
