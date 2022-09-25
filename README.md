@@ -6,7 +6,7 @@
 npm i
 ```
 
-### Add .env file and add the following
+### Add .env file and add the following, add your user name and password
 ```
 POSTGRES_HOST=127.0.0.1
 POSTGRES_DB=storefront
