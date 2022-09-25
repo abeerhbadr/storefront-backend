@@ -27,6 +27,7 @@
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.20",
     "pg": "^8.5.1",
+    "supertest": "^6.2.4",
     "typescript": "^4.1.3"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "@types/jasmine": "^3.6.3",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/pg": "^7.14.7",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/parser": "^5.37.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.2",

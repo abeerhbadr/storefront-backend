@@ -13,10 +13,16 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
 });
 
-app.use('/store', userRouter);  //RESTful api?
+app.get('/store', (req: Request, res: Response) => {
+  res.send('Hello From Store!');
+});
+
+app.use('/store', userRouter); //RESTful api?
 app.use('/store', productRouter); //RESTful api?
 app.use('/store', orderRouter); //RESTful api, are each one a restful api or the store is the only restful api?
 
 app.listen(3000, () => {
   console.log(`starting app on: ${address}`);
 });
+
+export default app;
