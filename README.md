@@ -1,7 +1,4 @@
 # Storefront Backend Project
-
-# Image Processing API 
-
 ### To run the project
 
 ## Install the dependincies
