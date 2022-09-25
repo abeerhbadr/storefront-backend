@@ -8,7 +8,7 @@ const orderRouter = express.Router();
 const stOrder = new StoreOrder();
 
 orderRouter.get(
-  '/order',
+  '/orders/active',
   verifyAuthToken,
   async (req: Request, res: Response) => {
     try {
