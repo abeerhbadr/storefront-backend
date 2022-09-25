@@ -19,6 +19,24 @@ SALT_ROUNDS=10
 TOKEN_SECRET=bero123
 ```
 
+### Create databases
+```
+create database storefront 
+create database storefront_test
+```
+
+### Add/remove tables to dev database
+```
+db-migrate up
+dg-migrate down
+```
+
+### Add/remove tables to test database
+```
+db-migrate --env test up && db-migrate up
+db-migrate --env test down"
+```
+
 ### npm-run Scripts
 
 - `eslint` `npm run lint`
