@@ -1,12 +1,12 @@
 # Storefront Backend Project
 ### To run the project
 
-## Install the dependincies
+### Install the dependincies
 ```
 npm i
 ```
 
-## Add .env file and add the following
+### Add .env file and add the following
 ```
 POSTGRES_HOST=127.0.0.1
 POSTGRES_DB=storefront
