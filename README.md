@@ -30,14 +30,10 @@ BCRYPT_PASSWORD=my-secret-password
 SALT_ROUNDS=10
 TOKEN_SECRET=bero123
 ```
-### Database port
+### Ports
 ```
-5432
-```
-
-### Running port
-```
-3000
+express port: 3000
+database port: 5432
 ```
 
 ### Add/remove tables to dev database
