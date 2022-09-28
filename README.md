@@ -16,8 +16,6 @@ CREATE USER udacityuser WITH SUPERUSER PASSWORD 'password123';
 GRANT ALL PRIVILIDGES ON DATABASE storefront TO udacityuser;
 \c storefront_test
 GRANT ALL PRIVILIDGES ON DATABASE storefront_test TO udacityuser;
-
-//comment: make it superuser
 ```
 
 ### Add .env file and add the following
