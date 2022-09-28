@@ -32,8 +32,12 @@ BCRYPT_PASSWORD=my-secret-password
 SALT_ROUNDS=10
 TOKEN_SECRET=bero123
 ```
+### Database port
+```
+5432
+```
 
-### Port
+### Running port
 ```
 3000
 ```
