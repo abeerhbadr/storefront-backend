@@ -73,12 +73,12 @@ Some Description of the folders
     |   server.ts
     |
     +---models
+    |   \---tests   
     +---database
     +---controllers    
     +---middleware
     +---routes
-    |   \---api
-    |           
+    |   \---api        
     +---tests                
   ```
   
