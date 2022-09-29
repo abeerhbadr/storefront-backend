@@ -1,5 +1,5 @@
 CREATE TABLE OrderProduct(
-    orderId integer not null references StoreOrder(id),
-    productId integer not null references product(id),
-    productQty integer not null
+    orderid integer not null references StoreOrder(id),
+    productid integer not null references product(id),
+    productqty integer not null
 );

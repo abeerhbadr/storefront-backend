@@ -4,13 +4,15 @@
       "host": "127.0.0.1",
       "database": "storefront",
       "user": "udacityuser",
-      "password": "password123"
+      "password": "password123",
+      "port": 5432
     },
     "test": {
       "driver": "pg",
       "host": "127.0.0.1",
       "database": "storefront_test",
       "user": "udacityuser",
-      "password": "password123"
+      "password": "password123",
+      "port": 5432
     }
   }

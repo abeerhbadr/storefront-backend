@@ -6,11 +6,16 @@ const verifyAuthToken = (req: Request, res: Response, next: NextFunction) => {
     const authorizationHeader = req.headers.authorization;
     //@ts-ignore
     const token = authorizationHeader.split(' ')[1];
-    const decoded = jwt.verify(token, process.env.TOKEN_SECRET as jwt.Secret);
-
+    console.log('token in mid:', token)
+    console.log(process.env.TOKEN_SECRET as jwt.Secret)
+    jwt.verify(token as string, process.env.TOKEN_SECRET as string);
+    console.log('Valid token')
     next();
   } catch (error) {
-    res.status(401);
+    res.status(401)
+    res.json('Access denied, invalid token')
+    console.log('Access denied, invalid token')
+    return
   }
 };
 

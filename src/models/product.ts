@@ -15,7 +15,11 @@ export class StoreProduct {
       const sql = 'SELECT * FROM product';
       const result = await conn.query(sql);
       conn.release;
-      return result.rows;
+      let resArr = [];
+      for (let i = 0; i < result.rowCount; i++) {
+        resArr.push(result.rows[i]);
+      }
+      return resArr;
     } catch (error) {
       throw new Error(`Cannot get products. ${error}`);
     }

@@ -37,32 +37,29 @@ userRouter.get(
   }
 );
 
-userRouter.post(
-  '/users',
-  async (req: Request, res: Response) => {
-    try {
-      //res.send('this is the CREATE route');
-      console.log(req.body.firstname)
-      const u: person = {
-        id: 1,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        password_: req.body.password_,
-      };
-  
-      const newUser = await stUser.create(u);
-      //console.log(newUser)
-      var token = jwt.sign(
-        { user: newUser },
-        process.env.Token_SECRET as jwt.Secret
-      );
-      //console.log(token)
-      res.status(200).json(token);
-    } catch (err) {
-      res.status(400);
-      res.json(err);
-    }
+userRouter.post('/users', async (req: Request, res: Response) => {
+  try {
+    //res.send('this is the CREATE route');
+    console.log(req.body.firstname);
+    const u: person = {
+      id: 1,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      password_: req.body.password_,
+    };
+
+    const newUser = await stUser.create(u);
+    //console.log(newUser)
+    var token = jwt.sign(
+      {user: newUser},
+      process.env.TOKEN_SECRET as jwt.Secret
+    );
+    console.log('token in route:',token)
+    res.status(200).json(token);
+  } catch (err) {
+    res.status(400);
+    res.json(err);
   }
-);
+});
 
 export default userRouter;

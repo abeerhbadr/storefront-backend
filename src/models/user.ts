@@ -26,6 +26,7 @@ export class StoreUser {
 
   async create(u: person): Promise<person> {
     try {
+      console.log('hi')
       //@ts-ignore
       const conn = await client.connect();
       //console.log('conn:',conn) //changed env ENV to test to connect to test database, when run npm run jasmine-ts

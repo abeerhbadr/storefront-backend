@@ -8,11 +8,11 @@ const orderRouter = express.Router();
 const stOrder = new StoreOrder();
 
 orderRouter.get(
-  '/orders/active',
+  '/orders/active/:userId',
   verifyAuthToken,
   async (req: Request, res: Response) => {
     try {
-      const order = await stOrder.showCurrentOrder(parseInt(req.params.id));
+      const order = await stOrder.showCurrentOrder(parseInt(req.params.userId));
       res.status(200).json(order);
     } catch (err) {
       res.status(400);

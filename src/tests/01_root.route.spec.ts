@@ -5,12 +5,12 @@ const request = supertest(app);
 
 describe('Test root and store endpoint response', () => {
   it('gets the / endpoint', async () => {
-    const res = request.get('/');
-    expect((await res).status).toBe(200);
+    const res = await request.get('/');
+    expect(res.status).toBe(200);
   });
 
   it('gets the /store endpoint', async () => {
-    const res = request.get('/store');
-    expect((await res).status).toBe(200);
+    const res = await request.get('/store');
+    expect(res.status).toBe(200);
   });
 });

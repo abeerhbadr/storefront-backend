@@ -1,5 +1,5 @@
 CREATE TABLE StoreOrder(
     id SERIAL PRIMARY KEY, 
-    userId integer not null, 
-    orderStatus varchar(50) not null default 'active'
+    userid integer not null, 
+    ostatus varchar(50) not null default 'active'
 );
