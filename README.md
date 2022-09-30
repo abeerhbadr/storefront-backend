@@ -10,13 +10,12 @@ npm install
 ```
 CREATE DATABASE storefront;
 CREATE DATABASE storefront_test;
-CREATE USER udacityuser WITH PASSWORD 'password123';
+CREATE USER udacityuser WITH SUPERUSER PASSWORD 'password123';
+
 \c storefront
 GRANT ALL PRIVILIDGES ON DATABASE storefront TO udacityuser;
 \c storefront_test
 GRANT ALL PRIVILIDGES ON DATABASE storefront_test TO udacityuser;
-
-//comment: make it superuser
 ```
 
 ### Add .env file and add the following
@@ -31,10 +30,10 @@ BCRYPT_PASSWORD=my-secret-password
 SALT_ROUNDS=10
 TOKEN_SECRET=bero123
 ```
-
-### Port
+### Ports
 ```
-3000
+express port: 3000
+database port: 5432
 ```
 
 ### Add/remove tables to dev database
@@ -70,12 +69,12 @@ Some Description of the folders
     |   server.ts
     |
     +---models
+    |   \---tests   
     +---database
     +---controllers    
     +---middleware
     +---routes
-    |   \---api
-    |           
+    |   \---api        
     +---tests                
   ```
   
