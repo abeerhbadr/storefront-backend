@@ -28,7 +28,7 @@ POSTGRES_PASSWORD=password123
 ENV=dev
 BCRYPT_PASSWORD=my-secret-password
 SALT_ROUNDS=10
-TOKEN_SECRET=bero123
+TOKEN_SECRET=SECRET
 ```
 ### Ports
 ```
