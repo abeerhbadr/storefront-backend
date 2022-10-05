@@ -29,13 +29,17 @@ These are the notes from a meeting with the frontend developer that describe wha
 ```
 [GET] /store/users/:id
 ```
-- Create N[token required]
+- Create 
 ```
 [POST] /store/users
 ```
 
 #### Orders
-- Current Order by user (args: user id)[token required]
+- Create [token required]
+```
+[POST] /store/orders
+```
+- Current Order by user (args: user id) [token required]
 ```
 [GET] /store/orders/active/:userId
 ```
