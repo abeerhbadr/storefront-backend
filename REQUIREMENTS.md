@@ -29,13 +29,17 @@ These are the notes from a meeting with the frontend developer that describe wha
 ```
 [GET] /store/users/:id
 ```
-- Create N[token required]
+- Create 
 ```
 [POST] /store/users
 ```
 
 #### Orders
-- Current Order by user (args: user id)[token required]
+- Create [token required]
+```
+[POST] /store/orders
+```
+- Current Order by user (args: user id) [token required]
 ```
 [GET] /store/orders/active/:userId
 ```
@@ -54,12 +58,17 @@ These are the notes from a meeting with the frontend developer that describe wha
 - lastName
 - password
 
-#### Orders
+#### Order
 - id
 - id of each product in the order
 - quantity of each product in the order
 - user_id
 - status of order (active or complete)
+
+#### OrderProduct
+- orderid
+- productid
+- productqty
 
 ## Database Schema
 #### Product table
