@@ -40,7 +40,6 @@ userRouter.get(
 userRouter.post('/users', async (req: Request, res: Response) => {
   try {
     //res.send('this is the CREATE route');
-    console.log(req.body.firstname);
     const u: person = {
       id: 1,
       firstname: req.body.firstname,
@@ -51,10 +50,10 @@ userRouter.post('/users', async (req: Request, res: Response) => {
     const newUser = await stUser.create(u);
     //console.log(newUser)
     var token = jwt.sign(
-      {user: newUser},
+      { user: newUser },
       process.env.TOKEN_SECRET as jwt.Secret
     );
-    console.log('token in route:',token)
+    console.log('token in route:', token);
     res.status(200).json(token);
   } catch (err) {
     res.status(400);

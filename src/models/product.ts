@@ -14,12 +14,13 @@ export class StoreProduct {
       const conn = await client.connect();
       const sql = 'SELECT * FROM product';
       const result = await conn.query(sql);
-      conn.release;
-      let resArr = [];
-      for (let i = 0; i < result.rowCount; i++) {
-        resArr.push(result.rows[i]);
-      }
-      return resArr;
+      conn.release();
+      // let resArr = [];
+      // for (let i = 0; i < result.rowCount; i++) {
+      //   resArr.push(result.rows[i]);
+      // }
+      // return resArr;
+      return result.rows;
     } catch (error) {
       throw new Error(`Cannot get products. ${error}`);
     }
@@ -29,11 +30,10 @@ export class StoreProduct {
     try {
       //@ts-ignore
       const conn = await client.connect();
-      //console.log('conn:',conn) //changed env ENV to test to connect to test database, when run npm run jasmine-ts
       const sql = `INSERT INTO product (pName, price, category) VALUES ($1, $2, $3) RETURNING *`;
       const result = await conn.query(sql, [p.pname, p.price, p.category]);
       //console.log(result.rows[0])
-      conn.release;
+      conn.release();
       return result.rows[0];
     } catch (error) {
       throw new Error(`Cannot create product. ${error}`);
@@ -46,7 +46,7 @@ export class StoreProduct {
       const conn = await client.connect();
       const sql = `SELECT * FROM product where id=($1)`;
       const result = await conn.query(sql, [id]);
-      conn.release;
+      conn.release();
       return result.rows[0];
     } catch (error) {
       throw new Error(`Cannot show product. ${error}`);

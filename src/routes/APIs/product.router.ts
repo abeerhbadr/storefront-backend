@@ -33,17 +33,17 @@ productRouter.post(
   '/products',
   verifyAuthToken,
   async (req: Request, res: Response) => {
-    const p: product = {
-      id: 1,
-      pname: req.body.pname,
-      price: req.body.price,
-      category: req.body.category,
-    };
-
-    const newProduct = await stProduct.create(p);
-    res.status(200).json(newProduct);
     try {
-      res.send('this is the CREATE route');
+      //res.send('this is the CREATE route');
+      const p: product = {
+        id: 1,
+        pname: req.body.pname,
+        price: req.body.price,
+        category: req.body.category,
+      };
+
+      const newProduct = await stProduct.create(p);
+      res.status(200).json(newProduct);
     } catch (err) {
       res.status(400);
       res.json(err);

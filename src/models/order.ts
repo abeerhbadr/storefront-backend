@@ -26,7 +26,6 @@ export class StoreOrder {
     try {
       //@ts-ignore
       const conn = await client.connect();
-      //console.log('conn:',conn) //changed env ENV to test to connect to test database, when run npm run jasmine-ts
       const sql1 = `INSERT INTO storeorder (userid, ostatus) VALUES ($1, $2) RETURNING *`;
       const result1 = await conn.query(sql1, [o.userid, o.ostatus]);
       const sqlOrderId = `SELECT id FROM storeorder ORDER BY id DESC limit 1`;
@@ -42,9 +41,7 @@ export class StoreOrder {
         ]);
         console.log('op:', result2.rows[0]);
       }
-
-      //console.log(result.rows[0])
-      conn.release;
+      conn.release();
       return result1.rows[0];
     } catch (error) {
       throw new Error(`Cannot create order. ${error}`);
@@ -58,12 +55,9 @@ export class StoreOrder {
       const sql = `SELECT * FROM storeorder o join orderproduct op on o.id=op.orderid 
       where o.userid=($1) and o.ostatus='active'`;
       const result = await conn.query(sql, [userid]);
-      conn.release;
-      let resArr = [];
-      for (let i = 0; i < result.rowCount; i++) {
-        resArr.push(result.rows[i]);
-      }
-      return resArr;
+      conn.release();
+      console.log(result.rows);
+      return result.rows;
     } catch (error) {
       throw new Error(`Cannot show current order. ${error}`);
     }

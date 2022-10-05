@@ -17,7 +17,8 @@ export class StoreUser {
       const conn = await client.connect();
       const sql = 'SELECT * FROM person';
       const result = await conn.query(sql);
-      conn.release;
+      conn.release();
+      console.log(result.rows);
       return result.rows;
     } catch (error) {
       throw new Error(`Cannot get users. ${error}`);
@@ -26,7 +27,6 @@ export class StoreUser {
 
   async create(u: person): Promise<person> {
     try {
-      console.log('hi')
       //@ts-ignore
       const conn = await client.connect();
       //console.log('conn:',conn) //changed env ENV to test to connect to test database, when run npm run jasmine-ts
@@ -38,7 +38,7 @@ export class StoreUser {
       const sql = `INSERT INTO person (firstname, lastname, password_) VALUES ($1, $2, $3) RETURNING *`;
       const result = await conn.query(sql, [u.firstname, u.lastname, hash]);
       //console.log(result.rows[0])
-      conn.release;
+      conn.release();
       return result.rows[0];
     } catch (error) {
       throw new Error(`Cannot create user. ${error}`);
@@ -51,7 +51,7 @@ export class StoreUser {
       const conn = await client.connect();
       const sql = `SELECT * FROM person where id=($1)`;
       const result = await conn.query(sql, [id]);
-      conn.release;
+      conn.release();
       console.log(result.rows[0]);
       return result.rows[0];
     } catch (error) {

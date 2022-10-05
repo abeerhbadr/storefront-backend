@@ -1475,10 +1475,10 @@
   "resolved" "https://registry.npmjs.org/jasmine-core/-/jasmine-core-3.99.1.tgz"
   "version" "3.99.1"
 
-"jasmine-spec-reporter@^6.0.0":
-  "integrity" "sha512-MvTOVoMxDZAftQYBApIlSfKnGMzi9cj351nXeqtnZTuXffPlbONN31+Es7F+Ke4okUeQ2xISukt4U1npfzLVrQ=="
-  "resolved" "https://registry.npmjs.org/jasmine-spec-reporter/-/jasmine-spec-reporter-6.0.0.tgz"
-  "version" "6.0.0"
+"jasmine-spec-reporter@^7.0.0":
+  "integrity" "sha512-OtC7JRasiTcjsaCBPtMO0Tl8glCejM4J4/dNuOJdA8lBjz4PmWjYQ6pzb0uzpBNAWJMDudYuj9OdXJWqM2QTJg=="
+  "resolved" "https://registry.npmjs.org/jasmine-spec-reporter/-/jasmine-spec-reporter-7.0.0.tgz"
+  "version" "7.0.0"
   dependencies:
     "colors" "1.4.0"
 
